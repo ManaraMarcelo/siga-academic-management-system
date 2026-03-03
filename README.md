@@ -1,28 +1,28 @@
-# SIGA - Sistema Integrado de Gestão Acadêmica 📚
+# SIGA - Integrated Academic Management System 📚
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-%23005F0F.svg?style=for-the-badge&logo=Thymeleaf&logoColor=white) ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 
-> **Disciplina:** Programação Orientada a Objetos  
-> **Tema:** Aplicação RESTful com Spring Boot  
+> **Course:** Object-Oriented Programming (OOP)  
+> **Theme:** RESTful Application with Spring Boot  
 > **Professor:** Marcos Roberto de Moraes (Maromo)
 
-O **SIGA** é uma aplicação web **Fullstack** (Backend API + Frontend Thymeleaf) desenvolvida para a gestão escolar. O sistema implementa uma **API RESTful completa**, cobrindo operações CRUD para múltiplas entidades (Alunos, Professores, Turmas, Disciplinas e Notas).
+**SIGA** is a **Fullstack** web application (Backend API + Frontend Thymeleaf) developed for school management. The system implements a **complete RESTful API**, covering CRUD operations for multiple entities (Students, Teachers, Classes, Subjects, and Grades).
 
 ---
-## 👨‍💻  Equipe de Desenvolvimento
-[Lucas Vieira](https://github.com/Lucas-WBB) •  [Marcelo Belloto](https://github.com/marcelo-belotto) •  [Marcelo Manara](https://github.com/ManaraMarcelo) • [Vinícius Emanuel](https://github.com/vinicius-emanuelds)
-
----
-
-## 🎯 Objetivos do Projeto
-
-- **API RESTful:** Implementação seguindo as melhores práticas e verbos HTTP.
-- **CRUD Completo:** Gestão integral de entidades acadêmicas.
-- **Documentação Automática:** Swagger/OpenAPI integrado para testes e visualização.
-- **Arquitetura MVC:** Separação clara entre Modelo, Visão e Controle.
+## 👨‍💻 Development Team
+[Lucas Vieira](https://github.com/Lucas-WBB) • [Marcelo Belloto](https://github.com/marcelo-belotto) • [Marcelo Manara](https://github.com/ManaraMarcelo) • [Vinícius Emanuel](https://github.com/vinicius-emanuelds)
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## 🎯 Project Objectives
+
+- **RESTful API:** Implementation following best practices and HTTP verbs.
+- **Complete CRUD:** Integral management of academic entities.
+- **Automatic Documentation:** Integrated Swagger/OpenAPI for testing and visualization.
+- **MVC Architecture:** Clear separation between Model, View, and Controller.
+
+---
+
+## 🚀 Technologies Used
 
 - **Java 21 (LTS)**
 - **Spring Boot 3**
@@ -31,314 +31,284 @@ O **SIGA** é uma aplicação web **Fullstack** (Backend API + Frontend Thymelea
   - Thymeleaf  
   - Validation
 - **Frontend:** Thymeleaf + Bootstrap (via CDN)
-- **Banco de Dados:** H2 Database (Modo Arquivo)
-- **Documentação:** SpringDoc OpenAPI (Swagger UI)
-- **Ferramentas:** Maven, Git
+- **Database:** H2 Database (File Mode)
+- **Documentation:** SpringDoc OpenAPI (Swagger UI)
+- **Build Tool:** Maven (Dependencies managed via `pom.xml`)
 
 ---
-## 🛠️ Instalação e Execução
+## 🛠️ Installation and Execution
 
-### Pré-requisitos
+### Prerequisites
 
-- **JDK 21 instalado**  
-- **Git (opcional)**  
-- O projeto inclui **Maven Wrapper (mvnw)**, dispensando instalação manual.
+- **JDK 21 installed** (Required)
+- **Git** (to clone the repository)
+- **Dependencies:** This project uses **Maven**. You **don't** need to install it manually; the project includes the **Maven Wrapper (mvnw)**.
 
+> [!NOTE]
+> All project dependencies (Spring, H2, Lombok, etc.) are defined in the [pom.xml](pom.xml) file. Maven will download them automatically when you first run the project. There is no `requirements.txt` as this is a Java project.
 
+### ▶️ Step-by-Step
 
-### ▶️ Passo a Passo
-
-#### 1. Clonar o Repositório
+#### 1. Clone the Repository
 
 ```sh
-git clone https://github.com/vinicius-emanuelds/GestaoAcademica.git
+git clone https://github.com/ManaraMarcelo/SIGA_Academic_System.git
+cd SIGA_Academic_System
 ```
 
-#### 2. Rodar a Aplicação
+#### 2. Run the Application
 
-No terminal, dentro da pasta do projeto:
+From the project root directory in your terminal:
 
-Windows:
+**Windows:**
 ```sh
 ./mvnw.cmd spring-boot:run
 ```
 
-Linux / Mac:
-```sh
-./mvnw spring-boot:run
-```
-
 **Linux / Mac:**
-Caso tenha erro de permissão ("permission denied"), rode o comando de liberação primeiro:
+First, ensure the wrapper has execution permissions:
 ```sh
 chmod +x mvnw
 ./mvnw spring-boot:run
 ```
 
-#### 3. Acessar
-Acessar
-- Sistema Web: http://localhost:8080
-- Swagger UI: http://localhost:8080/swagger-ui/index.html
-- Banco H2: http://localhost:8080/h2-console
+#### 3. Access
+
+- **Web System:** http://localhost:8080
+- **Swagger UI:** http://localhost:8080/swagger-ui/index.html
+- **H2 Console:** http://localhost:8080/h2-console
 
 ---
 
-## 📚 Estrutura da API (Endpoints)
+## 📚 API Structure (Endpoints)
 
-A API fornece recursos para manipulação das principais entidades escolares. Abaixo, um resumo dos principais endpoints disponíveis. Para detalhes completos, consulte a documentação Swagger.
+The API provides resources for managing main school entities. Below is a summary of the available endpoints. For full details, refer to the Swagger documentation.
 
-| Método | Endpoint                     | Descrição                           |
-|--------|------------------------------|-------------------------------------|
-| GET    | `/api/alunos`                | Lista todos os alunos               |
-| POST   | `/api/alunos`                | Cadastra um novo aluno              |
-| GET    | `/api/professores`           | Lista todos os professores          |
-| POST   | `/api/professores`           | Cadastra um novo professor          |
-| GET    | `/api/disciplinas`           | Lista todas as disciplinas          |
-| POST   | `/api/disciplinas`           | Cadastra uma nova disciplina        |
-| GET    | `/api/turmas`                | Lista as turmas disponíveis         |
-| POST   | `/api/turmas`                | Cria uma turma (vínculo Prof/Disc)  |
-| GET    | `/api/matriculas`            | Lista todas as matrículas           |
-| PUT    | `/api/matriculas/{id}/notas` | Atualiza as notas de um aluno       |
+| Method | Endpoint                     | Description                           |
+|--------|------------------------------|---------------------------------------|
+| GET    | `/api/alunos`                | List all students                     |
+| POST   | `/api/alunos`                | Register a new student                |
+| GET    | `/api/professores`           | List all teachers                     |
+| POST   | `/api/professores`           | Register a new teacher                |
+| GET    | `/api/disciplinas`           | List all subjects                     |
+| POST   | `/api/disciplinas`           | Register a new subject                |
+| GET    | `/api/turmas`                | List available classes                |
+| POST   | `/api/turmas`                | Create a class (Teacher/Subject link) |
+| GET    | `/api/matriculas`            | List all enrollments                  |
+| PUT    | `/api/matriculas/{id}/notas` | Update a student's grades             |
 
-> ⚠️ Dica: Para testar as requisições (POST, PUT, DELETE) diretamente, utilize a interface do Swagger.
+> ⚠️ Tip: To test requests (POST, PUT, DELETE) directly, use the Swagger UI interface.
 
+---
 
-# 🗄️ Configuração do Banco de Dados (H2)
+# 🗄️ Database Configuration (H2)
 
-Para cumprir o requisito de persistência sem complicar o ambiente de desenvolvimento, utilizamos o H2 em modo arquivo.
+To fulfill the persistence requirement without complicating the development environment, we use H2 in file mode.
 
-> Console de Gerenciamento: http://localhost:8080/h2-console
+- **URL JDBC:** `jdbc:h2:file:./dados/sigaDB`
+- **User:** `sa`
+- **Password:** `(empty)`
 
-- URL JDBC: ```jdbc:h2:file:./dados/sigaDB```
-- User: ```sa```
-- Password: ```(vazio)```
+> [!TIP]
+> The database file will be created in the `/dados` folder after the first execution.
 
-# 📂 Arquitetura do Projeto
+---
 
-A estrutura de pastas segue as boas práticas do Spring Boot:
+# 📂 Project Architecture
+
+The folder structure follows Spring Boot best practices:
 ```sh
 com.poo.siga  
-├── config/       # Configurações (OpenAPI, CORS)
-├── controller/   # Camada REST (Recebe as requisições HTTP)
-├── model/        # Entidades JPA (Mapeamento do Banco)
-├── repository/   # Interfaces de Acesso a Dados (Spring Data)
+├── config/       # Configurations (OpenAPI, CORS)
+├── controller/   # REST Layer (Handles HTTP requests)
+├── model/        # JPA Entities (Database Mapping)
+├── repository/   # Data Access Interfaces (Spring Data)
 └── SigaApplication.java
 ```
 
-# 📖 Manual do Usuário - SIGA
-<details> <summary><strong>Clique para expandir o Manual Completo</strong></summary>
+---
 
-Bem-vindo ao **SIGA (Sistema Integrado de Gestão Acadêmica)**.  
-Este manual guiará você pelas principais funcionalidades do sistema, desde o cadastro básico até o lançamento de notas.
+# 📖 User Manual - SIGA
+<details> <summary><strong>Click to expand Full Manual</strong></summary>
+
+Welcome to **SIGA (Integrated Academic Management System)**.  
+This manual will guide you through the main features of the system, from basic registration to grade entry.
 
 ---
 
-## 1. Acesso ao Sistema
+## 1. Accessing the System
 
-Abra seu navegador de preferência (Chrome, Firefox, Edge) e digite o endereço:
+Open your preferred browser (Chrome, Firefox, Edge) and type:
 
 🔗 **http://localhost:8080**
 
-Você verá a **Página Inicial (Dashboard)**, que serve como menu principal para todas as funcionalidades.
+You will see the **Home Page (Dashboard)**, which serves as the main menu.
 
 ---
 
-## 2. Fluxo de Cadastro Sugerido
+## 2. Recommended Registration Order
 
-Para garantir a integridade dos dados, recomendamos seguir a seguinte ordem de cadastros:
+To ensure data integrity, we recommend following this order:
 
-1. **Professores** – (Quem ensina?)  
-2. **Disciplinas** – (O que é ensinado?)  
-3. **Turmas** – (Onde e quando é ensinado?)  
-4. **Alunos** – (Quem estuda?)  
-5. **Notas** – (Avaliação do desempenho)  
-
----
-
-## 3. Gerenciando Professores
-
-Acesse o menu **Professores** na barra de navegação.
-
-### 3.1. Cadastrar Novo Professor
-
-1. Clique no botão **"Novo Professor"**.  
-2. Preencha o formulário com:
-
-   - **Nome:** Nome completo  
-   - **Email:** Endereço de contato (ex: prof.carlos@escola.com)  
-   - **CPF:** Documento válido  
-
-3. Clique em **Salvar**.  
-O novo professor aparecerá na listagem.
-
-### 3.2. Editar ou Excluir
-
-- **Editar:** Clique no ícone de lápis ao lado do nome.  
-- **Excluir:** Clique no ícone de lixeira.  
-
-⚠ **Atenção:** Professores vinculados a turmas ativas não podem ser excluídos.
+1. **Teachers** – (Who teaches?)  
+2. **Subjects** – (What is being taught?)  
+3. **Classes** – (Where and when?)  
+4. **Students** – (Who studies?)  
+5. **Grades** – (Performance evaluation)  
 
 ---
 
-## 4. Gerenciando Disciplinas
+## 3. Managing Teachers
 
-Acesse o menu **Disciplinas**.
+Access the **Teachers** menu in the navigation bar.
 
-### 4.1. Criar Disciplina
+### 3.1. Register New Teacher
 
-1. Clique em **"Nova Disciplina"**.  
-2. Informe:
+1. Click on **"New Teacher"**.  
+2. Fill in the form with:
+   - **Name:** Full name  
+   - **Email:** Contact address (e.g., prod.carlos@school.com)  
+   - **CPF:** Valid document ID
+3. Click **Save**.
 
-   - **Descrição:** Nome da matéria (ex: Matemática Básica)  
-   - **Código:** Sigla interna (ex: MAT-101)  
-   - **Créditos:** Carga horária ou peso (ex: 4)  
+### 3.2. Edit or Delete
 
-3. Confirme a operação.
-
----
-
-## 5. Gerenciando Turmas
-
-Acesse o menu **Turmas**.  
-Esta etapa conecta professores e disciplinas.
-
-### 5.1. Abrir Turma
-
-1. Clique em **"Nova Turma"**.  
-2. Selecione:
-
-   - **Semestre:** (ex: 2024-1)  
-   - **Professor:** Um professor já cadastrado  
-   - **Disciplina:** A matéria desejada  
-
-3. Salve.  
-A nova turma estará disponível para receber alunos.
+- **Edit:** Click the pencil icon next to the name.  
+- **Delete:** Click the trash can icon.  
+⚠ **Warning:** Teachers linked to active classes cannot be deleted.
 
 ---
 
-## 6. Gerenciando Alunos
+## 4. Managing Subjects
 
-Acesse o menu **Alunos**.
+Access the **Subjects** menu.
 
-### 6.1. Matricular Novo Aluno
+### 4.1. Create Subject
 
-1. Clique em **"Novo Aluno"**.  
-2. Preencha:
+1. Click on **"New Subject"**.  
+2. Enter:
+   - **Description:** Subject name (e.g., Basic Mathematics)  
+   - **Code:** Internal code (e.g., MAT-101)  
+   - **Credits:** Workload or weight (e.g., 4)
+3. Confirm the operation.
 
-   - Nome  
+---
+
+## 5. Managing Classes
+
+Access the **Classes** menu. This stage connects teachers and subjects.
+
+### 5.1. Open Class
+
+1. Click on **"New Class"**.  
+2. Select:
+   - **Semester:** (e.g., 2024-1)  
+   - **Teacher:** A teacher already registered  
+   - **Subject:** The desired subject
+3. Save.
+
+---
+
+## 6. Managing Students
+
+Access the **Students** menu.
+
+### 6.1. Enroll New Student
+
+1. Click on **"New Student"**.  
+2. Fill in:
+   - Name  
    - Email  
    - CPF  
-   - Número de Matrícula (ex: 20240001)
-
-3. Salve o registro.
-
-### 6.2. Histórico Escolar
-
-Na lista de alunos, clique em **Detalhes/Histórico** (quando disponível)  
-ou gere o relatório via API.
+   - Enrollment Number (e.g., 20240001)
+3. Save the record.
 
 ---
 
-## 7. Lançamento de Notas
+## 7. Grade Entry
 
-Acesse o menu **Notas** na barra lateral.  
-Esta tela é utilizada para registrar o desempenho dos alunos nas avaliações.
+Access the **Grades** menu in the sidebar. This screen is used to record student assessment performance.
 
-### 7.1. Registrar P1, P2 e P3
+### 7.1. Register P1, P2, and P3
 
-1. Localize o aluno e a turma na listagem.  
-2. Clique em **"Lançar Notas"**.  
-3. Preencha:
+1. Locate the student and class in the list.  
+2. Click on **"Enter Grades"**.  
+3. Fill in:
+   - **P1:** First exam grade (0–10)  
+   - **P2:** Second exam grade (0–10)  
+   - **P3:** Third exam or extra activity grade (0–10)
+4. Click **Save/Update**.
 
-   - **P1:** Nota da primeira prova (0–10)  
-   - **P2:** Nota da segunda prova (0–10)  
-   - **P3:** Nota da terceira prova ou atividade extra (0–10)  
-
-4. Clique em **Salvar/Atualizar**.
-
-O sistema calculará automaticamente a **Média** e atualizará o **Status** (Aprovado/Reprovado).
+The system will automatically calculate the **Average** and update the **Status** (Passed/Failed).
 
 ---
 
-## 8. Solução de Problemas Comuns
+## 8. Troubleshooting
 
-### ❌ Erro ao Excluir
-Verifique se o item (Professor ou Disciplina) não está vinculado a uma Turma ou Matrícula.
+### ❌ Error when deleting
+Check if the item (Teacher or Subject) is linked to a Class or Enrollment.
 
-### ⚠ Sistema não carrega
-Confirme se o backend está rodando e se a porta **8080** está livre.
-
-### 📁 Dados sumiram
-Verifique se o arquivo `sigaDB.mv.db` está presente na pasta **dados/** do projeto.
+### ⚠ System doesn't load
+Confirm that the backend is running and that port **8080** is free.
 
 ---
 
-# 📂 Exemplo de Cadastro de Novo Aluno
+# 📂 Student Registration Example
 
-1. Na nossa página inicial, escolhemos ao lado esquerdo a opção `Alunos`.  
-![IMAGEM HOME PAGE](imgs/aluno.png)
+1. Home page, select `Students` on the left.
+![HOME PAGE](imgs/aluno.png)
 
-2. Dentro da página de Alunos, escolhemos ao canto sinalizado em vermelho para adicionar um novo aluno.   
-![IMAGEM HOME ALUNOS](imgs/novo-aluno.png)
+2. Click the red-marked area to add a new student.
+![STUDENTS LIST](imgs/novo-aluno.png)
 
-3. No modal exibido, inserimos os dados pessoais do novo aluno para a adição.  
-![IMAGEM ADD ALUNOS](imgs/novo-aluno-info.png)
+3. Fill in personal data in the modal.
+![ADD STUDENT INFO](imgs/novo-aluno-info.png)
 
-4. Ao inserir corretamente os dados, uma mensagem de sucesso será exibida e seu novo aluno estará disponível na listagem de alunos.  
-![IMAGEM ](imgs/aluno-sucesso.png)
+4. Success message displayed.
+![SUCCESS](imgs/aluno-sucesso.png)
 
-5. Em amarelo vemos o novo aluno inserido.
-![IMAGEM NOVO ALUNO LISTA](imgs/lista-aluno.jpg)
+5. New student available in the list.
+![LIST](imgs/lista-aluno.jpg)
 
-6. Para a adição de outros campos, o sistema é muito parecido mudando apenas os dados para a adição.
-7. Para Professores por exemplo, vamos na aba `Professores` sinalizado em vermelho.  
-![IMAGEM ](imgs/professor.png)
+---
 
-8. Inserimos os dados e adicionamos.  
-![IMAGEM NOVO PROFESSOR](imgs/novo-professor.png)
+## 👨‍💻 Technical Support
 
-9. Mesma ideia para `Disciplinas` e outros. Sendo assim intuitivo e similar em simplicidade.    
-![IMAGEM NOVA DISCIPLINA](imgs/nova-disciplina.png)
-
-## 👨‍💻 Suporte Técnico
-
-Para dúvidas avançadas, entre em contato com a equipe de desenvolvimento:
-
-[Lucas Vieira](https://github.com/Lucas-WBB) •  [Marcelo Belloto](https://github.com/marcelo-belotto) •  [Marcelo Manara](https://github.com/ManaraMarcelo) • [Vinícius Emanuel](https://github.com/vinicius-emanuelds)
+For advanced questions, contact the development team:
+[Lucas Vieira](https://github.com/Lucas-WBB) • [Marcelo Belloto](https://github.com/marcelo-belotto) • [Marcelo Manara](https://github.com/ManaraMarcelo) • [Vinícius Emanuel](https://github.com/vinicius-emanuelds)
 
 </details>
 
 ---
 
-# 📝 Backlog do Projeto (Histórico de Implementação)
-Esta seção lista todas as tarefas planejadas e realizadas ao longo do desenvolvimento do SIGA.
+# 📝 Project Backlog (Implementation History)
 
-```markdown
-| ID   | Tarefa                                                                    | Módulo       | Prioridade | Status        |
+| ID   | Task                                                                      | Module       | Priority | Status        |
 |------|---------------------------------------------------------------------------|--------------|------------|---------------|
-| B01  | Definir escopo, requisitos e arquitetura MVC                              | Planejamento | Alta       | Concluído     |
-| B02  | Especificar modelo de dados (Aluno, Prof, Turma, Disc, Matrícula)         | Planejamento | Alta       | Concluído     |
-| B03  | Criar projeto Spring Boot e configurar dependências (JPA, Web, H2)        | Setup        | Alta       | Concluído     |
-| B04  | Criar entidade Aluno e AlunoRepository                                    | Aluno        | Alta       | Concluído     |
-| B05  | Implementar AlunoController (CRUD completo)                               | Aluno        | Alta       | Concluído     |
-| B06  | Implementar funcionalidade de Histórico Escolar (JSON)                    | Aluno        | Média      | Concluído     |
-| B07  | Criar entidade Professor e ProfessorRepository                            | Professor    | Média      | Concluído     |
-| B08  | Implementar ProfessorController (CRUD completo)                           | Professor    | Média      | Concluído     |
-| B09  | Criar entidade Disciplina e DisciplinaRepository                          | Disciplina   | Média      | Concluído     |
-| B10  | Implementar DisciplinaController (CRUD completo)                          | Disciplina   | Média      | Concluído     |
-| B11  | Criar entidade Turma e TurmaRepository                                    | Turma        | Alta       | Concluído     |
-| B12  | Implementar TurmaController (Vínculo Prof + Disc)                         | Turma        | Alta       | Concluído     |
-| B13  | Criar entidade Matrícula (Aluno + Turma) e Repository                     | Matrícula    | Alta       | Concluído     |
-| B14  | Implementar endpoint de Matrícula (Criar vínculo)                         | Matrícula    | Alta       | Concluído     |
-| B15  | Implementar lançamento de Notas (P1, P2, P3) e cálculo de média           | Notas        | Alta       | Concluído     |
-| B16  | Desenvolver telas Frontend com Thymeleaf (Home e Cadastros)               | Frontend     | Média      | Concluído     |
-| B17  | Configurar Documentação Automática (Swagger UI)                           | Infra        | Alta       | Concluído     |
-| B18  | Configurar persistência de dados em arquivo (H2)                          | Infra        | Alta       | Concluído     |
-```
+| B01  | Scoping, requirements, and MVC architecture                              | Planning     | High       | Completed     |
+| B02  | Data model specification (Student, Teacher, Class, Subject, Enrollment)   | Planning     | High       | Completed     |
+| B03  | Create Spring Boot project and configure dependencies (JPA, Web, H2)      | Setup        | High       | Completed     |
+| B04  | Create Student entity and StudentRepository                               | Student      | High       | Completed     |
+| B05  | Implement StudentController (Full CRUD)                                   | Student      | High       | Completed     |
+| B06  | Implement Academic History functionality (JSON)                           | Student      | Medium     | Completed     |
+| B07  | Create Teacher entity and TeacherRepository                               | Teacher      | Medium     | Completed     |
+| B08  | Implement TeacherController (Full CRUD)                                   | Teacher      | Medium     | Completed     |
+| B09  | Create Subject entity and SubjectRepository                               | Subject      | Medium     | Completed     |
+| B10  | Implement SubjectController (Full CRUD)                                   | Subject      | Medium     | Completed     |
+| B11  | Create Class entity and ClassRepository                                   | Class        | High       | Completed     |
+| B12  | Implement ClassController (Teacher + Subject link)                        | Class        | High       | Completed     |
+| B13  | Create Enrollment entity (Student + Class) and Repository                 | Enrollment   | High       | Completed     |
+| B14  | Implement Enrollment endpoint (Create link)                               | Enrollment   | High       | Completed     |
+| B15  | Implement Grade Entry (P1, P2, P3) and average calculation                | Grades       | High       | Completed     |
+| B16  | Develop Frontend views (Thymeleaf Home and Registration)                  | Frontend     | Medium     | Completed     |
+| B17  | Configure Automatic Documentation (Swagger UI)                            | Infra        | High       | Completed     |
+| B18  | Configure file data persistence (H2)                                      | Infra        | High       | Completed     |
 
 ---
 
-## 🙏 Agradecimentos
-Este projeto é o resultado de muito trabalho em equipe e aprendizado contínuo. Nossos agradecimentos vão para:
-* **Ao Prof. Maromo:** Pela mentoria técnica e por nos desafiar aula após aula.
-* **À Equipe de Desenvolvimento:** Pela parceria na integração entre Backend (Spring Boot) e Frontend, superando desafios técnicos juntos.
+## 🙏 Acknowledgements
+This project is the result of teamwork and continuous learning. Thanks to:
+* **Prof. Maromo:** For technical mentorship and for challenging us every class.
+* **Development Team:** For the partnership in integrating Backend (Spring Boot) and Frontend, overcoming technical challenges together.
+
+## 2025
