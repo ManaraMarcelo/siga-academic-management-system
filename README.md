@@ -31,7 +31,7 @@
 4. [Installation & Execution](#-installation-and-execution)
 5. [Database Configuration](#-database-configuration-h2)
 6. [User Manual](#-user-manual---siga)
-7. [Implementation Backlog](#-project-backlog)
+7. [Full Project Backlog](#-project-backlog-implementation-history)
 8. [Contact](#-contact)
 
 ---
@@ -137,13 +137,28 @@ The system allows inputting three exam scores (P1, P2, P3). Upon saving, the sys
 
 ---
 
-## 📝 Project Backlog
+## 📝 Project Backlog (Implementation History)
 
-| ID | Task | Module | Status |
-| --- | --- | --- | --- |
-| B01 | MVC Architecture Setup | Planning | ✅ Done |
-| B15 | Grade Logic (P1-P3) | Grades | ✅ Done |
-| B17 | Swagger UI Integration | Infra | ✅ Done |
+| ID | Task | Module | Priority | Status |
+| --- | --- | --- | --- | --- |
+| B01 | Scoping, requirements, and MVC architecture | Planning | High | ✅ Completed |
+| B02 | Data model specification (Student, Teacher, Class, Subject, Enrollment) | Planning | High | ✅ Completed |
+| B03 | Create Spring Boot project and configure dependencies (JPA, Web, H2) | Setup | High | ✅ Completed |
+| B04 | Create Student entity and StudentRepository | Student | High | ✅ Completed |
+| B05 | Implement StudentController (Full CRUD) | Student | High | ✅ Completed |
+| B06 | Implement Academic History functionality (JSON) | Student | Medium | ✅ Completed |
+| B07 | Create Teacher entity and TeacherRepository | Teacher | Medium | ✅ Completed |
+| B08 | Implement TeacherController (Full CRUD) | Teacher | Medium | ✅ Completed |
+| B09 | Create Subject entity and SubjectRepository | Subject | Medium | ✅ Completed |
+| B10 | Implement SubjectController (Full CRUD) | Subject | Medium | ✅ Completed |
+| B11 | Create Class entity and ClassRepository | Class | High | ✅ Completed |
+| B12 | Implement ClassController (Teacher + Subject link) | Class | High | ✅ Completed |
+| B13 | Create Enrollment entity (Student + Class) and Repository | Enrollment | High | ✅ Completed |
+| B14 | Implement Enrollment endpoint (Create link) | Enrollment | High | ✅ Completed |
+| B15 | Implement Grade Entry (P1, P2, P3) and average calculation | Grades | High | ✅ Completed |
+| B16 | Develop Frontend views (Thymeleaf Home and Registration) | Frontend | Medium | ✅ Completed |
+| B17 | Configure Automatic Documentation (Swagger UI) | Infra | High | ✅ Completed |
+| B18 | Configure file data persistence (H2) | Infra | High | ✅ Completed |
 
 ---
 
